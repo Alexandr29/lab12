@@ -6,11 +6,5 @@ public class Main {
         TestSuite suite = new JunitTesterImpl().suite();
         System.out.println(suite.testCount());
         System.out.println(suite.countTestCases());
-
-
-        //        JunitTester junitTester = new JunitTesterImpl();
-//        TestSuite suite = junitTester.suite();
-//        TestResult result = new TestResult();
-//        suite.run(result);
     }
 }

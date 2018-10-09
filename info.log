@@ -1,0 +1,12 @@
+TRACE [main] 2018-10-09 18:11:42.430  LoggingArrayCollectionImpl  - Add method is running
+TRACE [main] 2018-10-09 18:11:42.431  LoggingArrayCollectionImpl  - addAll method is running
+ERROR [main] 2018-10-09 18:11:42.431  LoggingArrayCollectionImpl  - java.lang.NullPointerException
+TRACE [main] 2018-10-09 18:12:25.548  LoggingArrayCollectionImpl  - Add method is running
+TRACE [main] 2018-10-09 18:12:25.550  LoggingArrayCollectionImpl  - addAll method is running
+ERROR [main] 2018-10-09 18:12:25.550  LoggingArrayCollectionImpl  - java.lang.NullPointerException
+TRACE [main] 2018-10-09 18:12:26.930  LoggingArrayCollectionImpl  - Add method is running
+TRACE [main] 2018-10-09 18:12:26.932  LoggingArrayCollectionImpl  - addAll method is running
+ERROR [main] 2018-10-09 18:12:26.932  LoggingArrayCollectionImpl  - java.lang.NullPointerException
+TRACE [main] 2018-10-09 18:13:32.100  LoggingArrayCollectionImpl  - Add method is running
+TRACE [main] 2018-10-09 18:13:32.101  LoggingArrayCollectionImpl  - addAll method is running
+ERROR [main] 2018-10-09 18:13:32.102  LoggingArrayCollectionImpl  - java.lang.NullPointerException

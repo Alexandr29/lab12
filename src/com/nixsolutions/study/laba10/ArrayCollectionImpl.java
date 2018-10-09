@@ -1,5 +1,6 @@
 package com.nixsolutions.study.laba10;
 
+import com.nixsolutions.study.laba11.LoggingArrayCollectionImpl;
 import interfaces.task5.ArrayCollection;
 import interfaces.task5.ArrayIterator;
 
@@ -10,10 +11,9 @@ import java.util.Iterator;
 import java.util.Objects;
 
 public class ArrayCollectionImpl<E> implements ArrayCollection<E> {
-
+LoggingArrayCollectionImpl loggingArrayCollection;
     public ArrayCollectionImpl() {
     }
-
     private int size = 0;
     private E[] elementData = (E[]) new Objects[0];
     private transient int modCount = 0;
@@ -23,7 +23,6 @@ public class ArrayCollectionImpl<E> implements ArrayCollection<E> {
 
     @Override public boolean add(E e) {
         try {
-
             if (size == elementData.length) {
                 increaseArray();
                 elementData[size] = e;
@@ -33,6 +32,7 @@ public class ArrayCollectionImpl<E> implements ArrayCollection<E> {
                 size++;
             }
         } catch (UnsupportedOperationException e1) {
+
             System.out.println(e1.getMessage());
         }
 

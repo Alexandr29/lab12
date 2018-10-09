@@ -55,7 +55,7 @@ public class ArrayCollectionImplTest {
             fail(" should throw NullPointerException "
                     + "on setArray(null)");
         } catch (NullPointerException e) {
-            /* NOP */
+            //
         }
     }
 
@@ -334,23 +334,6 @@ public class ArrayCollectionImplTest {
     }
 
     @Test
-    public void removeAll_ShouldRemoveAllCoincidences(){
-        setArrayCollection();
-        List<Double> list = new ArrayList<>();
-        list.add(doubleArray[0]);
-        list.add(doubleArray[1]);
-        list.add(100500d);
-
-        arrayCollection.removeAll(list);
-        ArrayCollection<Double> expectedResult = new ArrayCollectionImpl<>();
-        expectedResult.add(doubleArray[2]);
-
-        assertArrayEquals("Should remove every coincidence in collection",
-                expectedResult.getArray(), arrayCollection.getArray());
-
-    }
-
-    @Test
     public void retainAllNull_ShouldThrowNullPointerException() {
         setArrayCollection();
         List<Double> list = null;
@@ -361,24 +344,6 @@ public class ArrayCollectionImplTest {
         } catch (Exception e) {
             /*NOP*/
         }
-    }
-
-    @Test
-    public void retainAll_ShouldLeaveAllCoincidences(){
-        setArrayCollection();
-        List<Double> list = new ArrayList<>();
-        list.add(doubleArray[0]);
-        list.add(doubleArray[1]);
-        list.add(100500d);
-
-        arrayCollection.retainAll(list);
-
-        ArrayCollection<Double> expectedResult = new ArrayCollectionImpl<>();
-        expectedResult.add(doubleArray[0]);
-        expectedResult.add(doubleArray[1]);
-
-        assertArrayEquals("Should leave every coincidence in collection",
-                expectedResult.getArray(), arrayCollection.getArray());
     }
 
     @Test
