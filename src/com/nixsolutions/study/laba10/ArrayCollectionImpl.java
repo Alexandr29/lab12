@@ -10,7 +10,6 @@ import java.util.Iterator;
 import java.util.Objects;
 
 public class ArrayCollectionImpl<E> implements ArrayCollection<E> {
-    private ArrayIterator<E> arrayIterator;
 
     public ArrayCollectionImpl() {
     }
@@ -19,8 +18,8 @@ public class ArrayCollectionImpl<E> implements ArrayCollection<E> {
     private E[] elementData = (E[]) new Objects[0];
     private transient int modCount = 0;
     private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
-    private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
-    private static final int DEFAULT_CAPACITY = 10;
+//    private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
+//    private static final int DEFAULT_CAPACITY = 10;
 
     @Override public boolean add(E e) {
         try {
@@ -75,7 +74,7 @@ public class ArrayCollectionImpl<E> implements ArrayCollection<E> {
     }
 
     @Override public Iterator<E> iterator() {
-        arrayIterator = new ArrayIteratorImpl();
+        ArrayIterator<E> arrayIterator = new ArrayIteratorImpl();
         return arrayIterator;
     }
 
@@ -233,13 +232,13 @@ public class ArrayCollectionImpl<E> implements ArrayCollection<E> {
         return -1;
     }
 
-    private void ensureExplicitCapacity(int minCapacity) {
-        //modCount++;
-
-        // overflow-conscious code
-        if (minCapacity - elementData.length > 0)
-            grow(minCapacity);
-    }
+//    private void ensureExplicitCapacity(int minCapacity) {
+//        //modCount++;
+//
+//        // overflow-conscious code
+//        if (minCapacity - elementData.length > 0)
+//            grow(minCapacity);
+//    }
 
     private static int hugeCapacity(int minCapacity) {
         if (minCapacity < 0) // overflow
