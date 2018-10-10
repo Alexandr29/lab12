@@ -9,7 +9,6 @@ import java.util.NoSuchElementException;
 public class ArrayCollectionIteratorTest extends TestCase {
     private final ArrayCollection collection = new ArrayCollectionImpl();
     private final ArrayIterator iterator = (ArrayIterator) collection.iterator();
-    private Object testObject;
 
     @Test public void testNext(){
         try {

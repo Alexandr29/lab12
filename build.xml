@@ -1,7 +1,10 @@
 <project name="MyProject" default="compile" basedir=".">
-    <property name="src" location="src/main"/>
-    <property name="build" location="build"/>
+    <property name="src" location="src/main/com/nixsolutions/study"/>
+    <property name="test" location="src/main/test"/>
+    <property name="build" location="out/production"/>
+    <property name="buildtest" location="out/test"/>
     <property name="dist" location="dist"/>
+
 
     <path id="external.classpath">
         <pathelement location="lib/interfaces-2.0.2.jar"/>
@@ -9,8 +12,9 @@
         <pathelement location="lib/log4j-1.2.17.jar"/>
         <pathelement location="lib/slf4j-api-1.8.0-beta2.jar"/>
         <pathelement location="lib/slf4j-log4j12-1.8.0-beta2.jar"/>
+        <pathelement location="src/main/test/ArrayCollectionImplTest.java"/>
         <pathelement
-                location="com/nixsolutions/study/laba10/JunitTesterImpl.java"/>
+                location="study/src/main/test/JunitTesterImpl.java"/>
     </path>
 
     <target name="init">
@@ -26,7 +30,44 @@
         </javac>
     </target>
 
+    <target name="testcompile" depends="compile">
+        <javac srcdir="${test}" destdir="${build}" includeantruntime="false">
+            <compilerarg value="-Xlint:unchecked"/>
+            <classpath refid="external.classpath"/>
+        </javac>
+
+    </target>
+
     <target name="clean">
         <delete dir="build"/>
+        <delete dir="out"/>
     </target>
+
+    <target name="test" depends="testcompile" description="run all tests">
+        <junit fork="true" forkmode="once" failureProperty="test.failed">
+            <!--<classpath refid="classpath-test"/>-->
+<classpath>
+    <pathelement location="lib/junit-4.10.jar"/>
+</classpath>
+            <formatter type="xml"/>
+            <batchtest todir="reports" fork="yes">
+                <fileset dir="${test}">
+                    <include name="**/JunitTesterImpl.java"/>
+                    <!--<exclude name="**/*Impl.java"/>-->
+                </fileset>
+            </batchtest>
+        </junit>
+    </target>
+
+    <target name="test1" depends="testcompile">
+        <junit>
+            <classpath>
+                <pathelement location="lib/junit-4.10.jar"/>
+                <pathelement location="${test}"/>
+            </classpath>
+            <test name="JunitTesterImpl"/>
+        </junit>
+    </target>
+
+
 </project>
