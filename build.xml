@@ -1,0 +1,32 @@
+<project name="MyProject" default="compile" basedir=".">
+    <property name="src" location="src/main"/>
+    <property name="build" location="build"/>
+    <property name="dist" location="dist"/>
+
+    <path id="external.classpath">
+        <pathelement location="lib/interfaces-2.0.2.jar"/>
+        <pathelement location="lib/junit-4.10.jar"/>
+        <pathelement location="lib/log4j-1.2.17.jar"/>
+        <pathelement location="lib/slf4j-api-1.8.0-beta2.jar"/>
+        <pathelement location="lib/slf4j-log4j12-1.8.0-beta2.jar"/>
+        <pathelement
+                location="com/nixsolutions/study/laba10/JunitTesterImpl.java"/>
+    </path>
+
+    <target name="init">
+        <mkdir dir="${build}"/>
+    </target>
+
+    <target name="compile" depends="init"
+            description="compile the source">
+        <!-- Compile the Java code from ${src} into ${build} -->
+        <javac srcdir="${src}" destdir="${build}" includeantruntime="false">
+            <compilerarg value="-Xlint:unchecked"/>
+            <classpath refid="external.classpath"/>
+        </javac>
+    </target>
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+</project>

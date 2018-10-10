@@ -1,8 +1,7 @@
-package com.nixsolutions.study.laba10;
-
 import interfaces.task5.ArrayCollection;
 import interfaces.task5.ArrayIterator;
 import junit.framework.TestCase;
+import main.com.nixsolutions.study.laba10.ArrayCollectionImpl;
 import org.junit.Test;
 
 import java.util.NoSuchElementException;

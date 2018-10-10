@@ -1,7 +1,6 @@
-package com.nixsolutions.study.laba10;
-
 import interfaces.task5.ArrayCollection;
 import interfaces.task5.ArrayIterator;
+import main.com.nixsolutions.study.laba10.ArrayCollectionImpl;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

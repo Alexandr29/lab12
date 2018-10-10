@@ -1,6 +1,6 @@
-package com.nixsolutions.study.laba11;
+package main.com.nixsolutions.study.laba11;
 
-import com.nixsolutions.study.laba10.ArrayCollectionImpl;
+import main.com.nixsolutions.study.laba10.ArrayCollectionImpl;
 import interfaces.logging.LoggingArrayCollection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

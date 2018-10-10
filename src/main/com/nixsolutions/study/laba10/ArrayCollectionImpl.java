@@ -1,6 +1,6 @@
-package com.nixsolutions.study.laba10;
+package main.com.nixsolutions.study.laba10;
 
-import com.nixsolutions.study.laba11.LoggingArrayCollectionImpl;
+import main.com.nixsolutions.study.laba11.LoggingArrayCollectionImpl;
 import interfaces.task5.ArrayCollection;
 import interfaces.task5.ArrayIterator;
 
@@ -11,7 +11,6 @@ import java.util.Iterator;
 import java.util.Objects;
 
 public class ArrayCollectionImpl<E> implements ArrayCollection<E> {
-LoggingArrayCollectionImpl loggingArrayCollection;
     public ArrayCollectionImpl() {
     }
     private int size = 0;
